@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 
 const app = express();
 app.use(express.json());
+const autoresRouter = require("./routes/autores");
+app.use("/api/autores", autoresRouter);
 
 app.get("/", (req, res) => {
   res.json({ mensaje: "API de biblioteca funcionando" });
