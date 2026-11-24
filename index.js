@@ -7,6 +7,8 @@ const app = express();
 app.use(express.json());
 const autoresRouter = require("./routes/autores");
 app.use("/api/autores", autoresRouter);
+const librosRouter = require("./routes/libros");
+app.use("/api/libros", librosRouter);
 
 app.get("/", (req, res) => {
   res.json({ mensaje: "API de biblioteca funcionando" });
