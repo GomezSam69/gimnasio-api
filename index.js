@@ -5,13 +5,13 @@ const mongoose = require("mongoose");
 
 const app = express();
 app.use(express.json());
-const autoresRouter = require("./routes/autores");
-app.use("/api/autores", autoresRouter);
-const librosRouter = require("./routes/libros");
-app.use("/api/libros", librosRouter);
+const entrenadoresRouter = require("./routes/entrenadores");
+app.use("/api/entrenadores", entrenadoresRouter);
+const rutinasRouter = require("./routes/rutinas");
+app.use("/api/rutinas", rutinasRouter);
 
 app.get("/", (req, res) => {
-  res.json({ mensaje: "API de biblioteca funcionando" });
+ res.json({ mensaje: "API de gimnasio funcionando" });
 });
 
 const PORT = 3000;

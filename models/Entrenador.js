@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const autorSchema = new mongoose.Schema(
+const entrenadorSchema = new mongoose.Schema(
   {
     nombre: {
       type: String,
@@ -12,17 +12,17 @@ const autorSchema = new mongoose.Schema(
         "El nombre solo puede tener letras, tildes y ñ",
       ],
     },
-    nacionalidad: {
+    especialidad: {
       type: String,
       trim: true,
     },
-    anioNacimiento: {
+    aniosExperiencia: {
       type: Number,
-      min: [1000, "El año de nacimiento no es válido"],
-      max: [new Date().getFullYear(), "El año de nacimiento no puede ser futuro"],
+      min: [0, "Los años de experiencia no pueden ser negativos"],
+      max: [60, "Los años de experiencia no son válidos"],
     },
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Autor", autorSchema);
+module.exports = mongoose.model("Entrenador", entrenadorSchema);
